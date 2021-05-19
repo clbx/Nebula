@@ -21,12 +21,12 @@ Nebula uses its own extremley reduced instruction set ( 16 instructions! ) . Thi
 
 ### Data Manipulation
 
-| Instruction | Meaning      | Example    | Comment                 |
-| ----------- | ------------ | ---------- | ----------------------- |
-| ld          | r0 = mem[r1] | ld r0,r1   | Sets register to memory |
-| st          | mem[r1] = r0 | st r0, r1  | Sets memory to register |
-| ldi         | r0 = #       | ld r0,1000 |                         |
-| sti         | mem[r1] = #  | st r0,1000 |                         |
+| Instruction | Meaning      | Example     | Comment                       |
+| ----------- | ------------ | ------------| ------------------------------|
+| ld          | r0 = mem[r1] | ld r0,r1    | Sets register to memory       |
+| st          | mem[r1] = r0 | st r0, r1   | Sets memory to register       |
+| ldi         | r0 = #       | ldi r0,1000 | Loads register from immediate |
+| sti         | mem[r1] = #  | sti r0,1000 | Sets memory to immediate      |
 
 ### Branching
 
