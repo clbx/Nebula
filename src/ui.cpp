@@ -3,6 +3,10 @@
 
 
 int UI::run(){
+    UIStatus uiStatus;
+    uiStatus.showSplash = true; //Show Splash on Startup
+
+
     if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER | SDL_INIT_GAMECONTROLLER) != 0){
         printf("Error: %s\n", SDL_GetError());
         return -1;
@@ -101,9 +105,11 @@ int UI::run(){
         ImGui_ImplOpenGL3_NewFrame();
         ImGui_ImplSDL2_NewFrame(window);
         ImGui::NewFrame();
-    
-    
+
         ImGui::ShowDemoWindow();
+
+
+        splash(uiStatus.showSplash);
  
 
         // Rendering
@@ -126,3 +132,8 @@ int UI::run(){
 
     return 0;
 }
+
+
+
+
+

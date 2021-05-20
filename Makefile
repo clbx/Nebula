@@ -2,6 +2,12 @@ EXE = nebula
 #MAIN SOURCES
 SOURCES = main.cpp ui.cpp
 
+#UI SOURCES
+SOURCES += ui/splash.cpp
+
+#MACHINE SOURCES
+SOURCES += machine/cpu.cpp machine/mainboard.cpp machine/instruction.cpp
+
 #LIB SOURCES
 SOURCES += lib/gl3w/GL/glew.c
 SOURCES += lib/imgui/backends/imgui_impl_sdl.cpp lib/imgui/backends/imgui_impl_opengl3.cpp
@@ -15,7 +21,7 @@ BINS = $(addprefix bin/, $(OBJS))
 UNAME_S := $(shell uname -s)
 ARCH := $(shell gcc -dumpmachine)
 
-CXXFLAGS = -Ilib/imgui -Ilib/misc -Ilib/imgui/backends
+CXXFLAGS = -Ilib/imgui -Ilib/misc -Ilib/imgui/backends -Isrc/ -Isrc/machine -Isrc/ui
 CXXFLAGS += -g -Wformat -Wno-unknown-pragmas #-lncurses -fno-omit-frame-pointer -fsanitize=thread
 LIBS =
 
@@ -23,9 +29,6 @@ LIBS =
 ## Using OpenGL loader: gl3w [default]
 # SOURCES += lib/gl3w/GL/gl3w.c
 CXXFLAGS += -Ilib/gl3w
-ifeq ($(PLAT), Pi)
-	CXXFLAGS += -lwiringPi
-endif
 
 ifeq ($(UNAME_S), Linux) #LINUX
 	ECHO_MESSAGE = "Linux"
@@ -52,6 +55,14 @@ endif
 
 
 %.o:%.cpp
+	mkdir -p bin
+	$(CXX) $(CXXFLAGS) -c -o bin/$@ $<
+
+%.o:ui/%.cpp
+	mkdir -p bin
+	$(CXX) $(CXXFLAGS) -c -o bin/$@ $<
+
+%.o:machine/%.cpp
 	mkdir -p bin
 	$(CXX) $(CXXFLAGS) -c -o bin/$@ $<
 
@@ -84,4 +95,4 @@ $(EXE): $(OBJS)
 
 clean:
 	rm -rf bin 
-	rm cosmic
+	rm nebula

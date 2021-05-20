@@ -27,9 +27,6 @@
 * that avoids using a centralized stationary memory location. 
 */
 
-
-static MemoryEditor ramEdit;
-static Logger debugLog;
 UI gui;
 
 //TODO: Implement arguments

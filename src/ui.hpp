@@ -12,11 +12,18 @@
 #include "imgui_impl_opengl3.h"
 #include <GL/glew.h>
 
+#include "uistatus.hpp"
+#include "mainboard.hpp"
+
+
 class UI{
     public:
         int run();
 
 
     private:
-        int splash();
+        Mainboard mainboard;
+
+        
+        int splash(bool);
 };
