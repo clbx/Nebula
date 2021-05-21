@@ -109,7 +109,7 @@ int UI::run(){
         ImGui::ShowDemoWindow();
 
 
-        splash(uiStatus.showSplash);
+        splash(&uiStatus.showSplash,mainboard);
  
 
         // Rendering

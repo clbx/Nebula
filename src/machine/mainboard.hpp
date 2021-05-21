@@ -13,6 +13,9 @@
 class Mainboard{
     public:
         Instruction* InstructionList;
+
+        void addCPU();
+    
     private:    
         CPU cpu;
 

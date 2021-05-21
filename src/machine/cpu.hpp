@@ -1,3 +1,5 @@
 class CPU{
+    public:
+        CPU();
 
 };

@@ -25,5 +25,5 @@ class UI{
         Mainboard mainboard;
 
         
-        int splash(bool);
+        int splash(bool*,Mainboard);
 };
