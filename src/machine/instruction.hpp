@@ -7,7 +7,12 @@
  * 
  * 
  */
+#include <string>
 
 class Instruction{
+    public:
+        std::string mnemonic;
+        std::string* operands;
+ 
 
 };
