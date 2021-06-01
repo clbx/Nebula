@@ -18,3 +18,12 @@ Here are some of the options that I am planning on implementing at first.
 * External Devices
 
 These are all of the things that make up a "basic" computer, and go past Cosmic and its very simple design, and takes a focus on architecture instead of building a more complete product. 
+
+
+## Starting Off
+
+Nebula needs 3 basic settings to work with at the bare minimum
+
+* CPU 
+* Designated Pipelining (No Pipelining is simplest and default)
+* Memory
