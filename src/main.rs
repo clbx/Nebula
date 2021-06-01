@@ -1,3 +1,5 @@
-fn main() {
-    println!("Hello, world!");
+mod memory;
+
+fn main(){
+    let mut memory = Memory::new();
 }
